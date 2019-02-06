@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title></title>
+	
+	<style>
+    
+        #greeting {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+    <p id="greeting"></p>
+    <p id="song"></p>
+ 
+	<script type="text/javascript">
+var today = new Date()
+var hourNow = today.getHours();
+var minutesNow = today.getMinutes();        
+var greeting;
+if (hourNow > 18){
+  greeting = "Good evening!";
+        var morn = '<iframe src="evening.mp3" allow="autoplay" style="display:none"></iframe>' ;
+    document.getElementById("song").innerHTML = morn;    
+
+} else if(hourNow > 12) {
+  greeting = "Good afternoon!";
+            var morn = '<iframe src="afternoon.mp3" allow="autoplay" style="display:none"></iframe>' ;
+    document.getElementById("song").innerHTML = morn;    
+} else if (hourNow > 9){
+  greeting = "Good morning! ";
+    var morn = '<iframe src="morning.mp3" allow="autoplay" style="display:none"></iframe>' ;
+    document.getElementById("song").innerHTML = morn;    
+} else {
+  greeting = "Welcome";
+    
+}
+
+document.getElementById("greeting").innerHTML = greeting + "It's " + hourNow + ":" + minutesNow + ".";
+  
+
+        
+	</script>
+</body>
+</html>
